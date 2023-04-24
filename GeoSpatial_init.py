@@ -1,3 +1,5 @@
+# Note: Only using matplotlib here for visualization, refer to GeoSpatial_pysal.py for using pysal for visualization.
+
 import warnings
 from shapely.errors import ShapelyDeprecationWarning
 warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
