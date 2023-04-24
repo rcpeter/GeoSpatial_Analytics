@@ -1,0 +1,7 @@
+geopandas
+dask[complete]
+dask-geopandas
+matplotlib
+pysal
+contextily
+descartes
