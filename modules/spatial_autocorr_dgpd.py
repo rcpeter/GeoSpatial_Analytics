@@ -31,6 +31,7 @@ world_dask = dgpd.from_geopandas(world, npartitions=4)
 weights = lps.weights.Queen.from_dataframe(world)
 
 # Standardize the population data using Dask
+# Doesn't really make sense to use this, but still, for the sake of implementation
 world_dask["pop_est_std"] = (world_dask["pop_est"] - world_dask["pop_est"].mean()) / world_dask["pop_est"].std()
 
 # Compute values and convert back to GeoDataFrame for operations not supported in Dask-GeoPandas
