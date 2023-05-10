@@ -1,3 +1,5 @@
+# Partition based on re-ingested data, for visualisation: https://tomaugspurger.github.io/posts/dask-geopandas-partitions/
+
 '''
 The issue with performing spatial autocorrelation calculations (like Moran's I) using Dask-GeoPandas is that the calculations would require knowledge about entire dataset, not just individual chunks. Dask-GeoPandas is designed for operations that can be performed on individual chunks of data in-parallel thus no support for these direct calculations.
 
