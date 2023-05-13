@@ -77,8 +77,9 @@ def compute_bivariate_spatial_autocorr(data_file_path, cols, output_file_path):
         print(f"Bivariate Moran's I between {cols[0]} and {cols[1]}: {bivariate_moran.I:.4f}, p-value: {bivariate_moran.p_sim:.4f}")
 
 if __name__ == '__main__':
-    data_file_path = gpd.datasets.get_path('naturalearth_lowres')
-    cols = ["pop_est", "gdp_md_est"]
+    # data_file_path = gpd.datasets.get_path('naturalearth_lowres')
+    data_file_path = '/home/y4xxh/Documents/SpatialDaskDB_TIGER/learned_DaskDB/data/arealm/arealm.shp'
+    cols = ["ALAND", "AWATER"]
     output_file_path = "/home/y4xxh/Documents/SSTD_GeoSpatial/images/analytics/spatial_autocorrelation/bivariate_spatial_autocorrelation/bvsa"
     compute_bivariate_spatial_autocorr(data_file_path, cols, output_file_path)
 

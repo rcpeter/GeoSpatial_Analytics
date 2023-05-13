@@ -9,7 +9,8 @@ def compute_spatial_autocorr(data_file_path, cols, output_file_path):
     assert len(cols) > 0, "At least one column name must be provided."
     
     df = gpd.read_file(data_file_path)
-    
+    print(df)
+
     # Ensure the columns exist in the dataframe
     for col in cols:
         assert col in df.columns, f"Column {col} does not exist in the dataframe."
@@ -57,8 +58,10 @@ def compute_spatial_autocorr(data_file_path, cols, output_file_path):
         print(f"Plot saved at: {output_file_path}_{col}.jpeg")
 
 if __name__ == '__main__':
-    data_file_path = gpd.datasets.get_path('naturalearth_lowres')
-    cols = ["pop_est", "gdp_md_est"]
+    # Import tiger dataset path
+    # data_file_path = gpd.datasets.get_path('naturalearth_lowres')
+    data_file_path = '/home/y4xxh/Documents/SpatialDaskDB_TIGER/learned_DaskDB/data/arealm/arealm.shp'
+    cols = ["ALAND", "AWATER"]
     output_file_path = "/home/y4xxh/Documents/SSTD_GeoSpatial/images/analytics/spatial_autocorr_warg"
     compute_spatial_autocorr(data_file_path, cols, output_file_path)
 

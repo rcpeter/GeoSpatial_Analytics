@@ -5,3 +5,8 @@ matplotlib
 pysal
 contextily
 descartes
+
+sqlalchemy
+sql-metadata
+ply
+hdfs3
