@@ -40,10 +40,10 @@ def compute_bivariate_spatial_autocorr(data_file_path, cols, output_file_path):
         # Create a new weights matrix for the filtered data
         weights_sig = lps.weights.Queen.from_dataframe(df_sig)
         weights_sig.transform = 'r'
-                
+
         # Recalculate local_moran for the filtered data
         local_moran_sig = esda.moran.Moran_Local(np.nan_to_num(df_sig[f"{col}_std"]), weights_sig)
-                
+
         fig, ax = lisa_cluster(local_moran_sig, df_sig, p=0.05) # Plotting LISA cluster map with significant locations only
 
         plt.title(f"Local Moran's I LISA Cluster Map for {col}")
